@@ -27,6 +27,11 @@ export default function FilteredNewsPage({ params }) {
     links = [];
   }
 
+  // 修正：當沒有選擇年份時，顯示空陣列
+  if (!selectedYear) {
+    news = [];
+  }
+
   let newsContent = <p>No news found for the selected period.</p>;
 
   if (news && news.length > 0) {
